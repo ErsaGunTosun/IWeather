@@ -5,7 +5,7 @@ import { FaSearch } from "react-icons/fa";
 
 function Search() {
     return (
-        <div className="flex items-center justify-end basis-full md:basis-4/5 lg:basis-2/4 order-last md:order-2  ">
+        <div className="flex items-center justify-end basis-full md:basis-4/5 lg:basis-3/6 order-last md:order-2 ">
             <div className="relative block w-full">
                 
                 <div className="absolute inset-y-0 end-0 flex items-center pe-3 pointer-events-none">
