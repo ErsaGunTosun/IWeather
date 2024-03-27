@@ -13,10 +13,14 @@ function App() {
       <div class="flex h-screen  justify-center w-full ">
         <div className="container m-0 p-0 flex h-screen flex-col">
           <Header />
-          <div className="h-full grid grid-rows-8 grid-flow-col ">
-            <div></div>
-            <div class="flex-1 grid row-span-6 grid-cols-4 grid-flow-row gap-2 bg-gray-900 text-center justify-center items-center text-4xl">
+          <div className="h-full grid grid-rows-8 grid-flow-col ">  
 
+            <div className="text-white flex items-end">
+            <p className="text-3xl font-semibold mb-2">Today Overview</p>
+            </div>
+            
+            <div class="flex-1 grid row-span-6 grid-cols-4 grid-flow-row gap-2 bg-gray-900 text-center justify-center items-center text-4xl">
+             
               <div className="h-full col-span-1 grid grid-cols-1 grid-flow-row  ">
                 <div className="grid grid-cols-3 grid-flow-row  w-full px-6 py-6 text-start rounded-md bg-gray-600 ">
                   <div className="col-span-4 ">
