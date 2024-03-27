@@ -42,57 +42,116 @@ function App() {
                   <div className="  text-white w-full p-2 flex ">
                     <FaTemperatureHalf className="text-md" />
                     <p className="ms-2 p-0  italic text-lg">Thermal sensation: %28</p>
-                    
+
                   </div>
                   <hr class="basis-full w-full bg-transparent border-1 border-gray-300/25"/>
                 </div>
-                
-                 <div className="h-full flex flex-col items-center justify-center ">
+
+                <div className="h-full flex flex-col items-center justify-center ">
                   <div className="  text-white w-full p-2 flex ">
                     <FaWind className="text-md" />
                     <p className="ms-2 p-0  italic text-lg">Wind speed: %28</p>
-                    
+
                   </div>
                   <hr class="basis-full w-full bg-transparent border-1 border-gray-300/25"/>
                 </div>
-                 <div className="h-full flex flex-col items-center justify-center ">
+                <div className="h-full flex flex-col items-center justify-center ">
                   <div className="  text-white w-full p-2 flex ">
                     <IoWaterOutline className="text-md" />
                     <p className="ms-2 p-0  italic text-lg">Air humidity: %28</p>
-                    
+
                   </div>
                   <hr class="basis-full w-full bg-transparent border-1 border-gray-300/25"/>
                 </div>
-                 <div className="h-full flex flex-col items-center justify-center ">
+                <div className="h-full flex flex-col items-center justify-center ">
                   <div className="  text-white w-full p-2 flex ">
                     <IoSunnyOutline className="text-md" />
                     <p className="ms-2 p-0  italic text-lg">UV Index: %28</p>
-                    
+
                   </div>
                   <hr class="basis-full w-full bg-transparent border-1 border-gray-300/25"/>
                 </div>
-                 <div className="h-full flex flex-col items-center justify-center ">
+                <div className="h-full flex flex-col items-center justify-center ">
                   <div className="  text-white w-full p-2 flex ">
                     <IoRainyOutline className="text-md" />
                     <p className="ms-2 p-0  italic text-lg">Probability of rain: %28</p>
-                    
+
                   </div>
                   <hr class="basis-full w-full bg-transparent border-1 border-gray-300/25"/>
                 </div>
-                 <div className="h-full flex flex-col items-center justify-center ">
+                <div className="h-full flex flex-col items-center justify-center ">
                   <div className="  text-white w-full p-2 flex ">
                     <LiaCloudscale className="text-md font-normal" />
                     <p className="ms-2 p-0  italic text-lg">Pressure: %28</p>
-                    
+
                   </div>
                 </div>
               </div>
 
-              <div className="h-full col-span-2  bg-blue-500">
-                other days
-              </div>
-            </div>
 
+              <div className="h-full col-span-2 grid grid-cols-1 gap-4 place-content-center p-4  bg-gray-600 rounded-md">
+                <div className="h-full flex flex-col items-center justify-center  ">
+                  <div className="  text-white w-full p-3 flex ">
+                    <FaCloudMoon className="text-7xl font-normal" />
+                    <div className="text-center">
+                      <p className="ms-2 p-0  italic text-lg">Monday</p>
+                      <p className="ms-2 p-0  italic text-sm">May 16</p>
+                    </div>
+                    <div className="w-full text-end">
+                      <p className="ms-2 p-0  italic text-lg">Clouds</p>
+                      <p className="ms-2 p-0  italic text-sm">28°C / 32°C</p>
+                    </div>
+
+                  </div>
+                  <hr class="basis-full w-full bg-transparent border-1 border-gray-300/25" />
+                </div>
+                <div className="h-full flex flex-col items-center justify-center  ">
+                  <div className="  text-white w-full p-3 flex ">
+                    <FaCloudMoon className="text-7xl font-normal" />
+                    <div className="text-center">
+                      <p className="ms-2 p-0  italic text-lg">Monday</p>
+                      <p className="ms-2 p-0  italic text-sm">May 16</p>
+                    </div>
+                    <div className="w-full text-end">
+                      <p className="ms-2 p-0  italic text-lg">Clouds</p>
+                      <p className="ms-2 p-0  italic text-sm">28°C / 32°C</p>
+                    </div>
+
+                  </div>
+                  <hr class="basis-full w-full bg-transparent border-1 border-gray-300/25" />
+                </div>
+                <div className="h-full flex flex-col items-center justify-center  ">
+                  <div className="  text-white w-full p-3 flex ">
+                    <FaCloudMoon className="text-7xl font-normal" />
+                    <div className="text-center">
+                      <p className="ms-2 p-0  italic text-lg">Monday</p>
+                      <p className="ms-2 p-0  italic text-sm">May 16</p>
+                    </div>
+                    <div className="w-full text-end">
+                      <p className="ms-2 p-0  italic text-lg">Clouds</p>
+                      <p className="ms-2 p-0  italic text-sm">28°C / 32°C</p>
+                    </div>
+
+                  </div>
+                  <hr class="basis-full w-full bg-transparent border-1 border-gray-300/25" />
+                </div>
+                <div className="h-full flex flex-col items-center justify-center  ">
+                  <div className="  text-white w-full p-3 flex ">
+                    <FaCloudMoon className="text-7xl font-normal" />
+                    <div className="text-center">
+                      <p className="ms-2 p-0  italic text-lg">Monday</p>
+                      <p className="ms-2 p-0  italic text-sm">May 16</p>
+                    </div>
+                    <div className="w-full text-end">
+                      <p className="ms-2 p-0  italic text-lg">Clouds</p>
+                      <p className="ms-2 p-0  italic text-sm">28°C / 32°C</p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
