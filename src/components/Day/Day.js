@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Day({icon,day,date,weather,temp}) {
+function Day({icon,day,date,weather,temp,isLast=false}) {
     return (
         <div className="h-full flex flex-col items-center justify-center  ">
             <div className="  text-white w-full p-3 flex ">
@@ -16,7 +16,7 @@ function Day({icon,day,date,weather,temp}) {
                 </div>
 
             </div>
-            <hr class="basis-full w-full bg-transparent border-1 border-gray-300/25" />
+            {isLast ? "" : <hr class="basis-full w-full bg-transparent border-1 border-gray-300/25" />}
         </div>
     )
 }

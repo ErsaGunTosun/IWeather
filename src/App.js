@@ -49,7 +49,7 @@ function App() {
                 <Property icon={<IoWaterOutline className="text-md" />} name={"Air humandity"} value={"%28"} />
                 <Property icon={<IoSunnyOutline className="text-md" />} name={"UV index"} value={"%28"} />
                 <Property icon={<IoRainyOutline className="text-md" />} name={"Probaility of rain"} value={"%28"} />
-                <Property icon={<LiaCloudscale className="text-md" />} name={"Pressure"} value={"%28"} />
+                <Property icon={<LiaCloudscale className="text-md" />} name={"Pressure"} value={"%28"} isLast={true} />
               </div>
 
 
@@ -62,7 +62,7 @@ function App() {
                 <Day icon={<FaCloudMoon className="text-7xl font-normal" />}
                   day={"Monday"} date={"May 16"} weather={"Clouds"} temp={"28°C / 32°C"} />
                 <Day icon={<FaCloudMoon className="text-7xl font-normal" />}
-                  day={"Monday"} date={"May 16"} weather={"Clouds"} temp={"28°C / 32°C"} />
+                  day={"Monday"} date={"May 16"} weather={"Clouds"} temp={"28°C / 32°C"} isLast={true} />
 
               </div>
 
