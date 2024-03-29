@@ -3,9 +3,10 @@ import React from "react";
 // Components
 import Header from './components/Header/Header'
 import Property from './components/Property/Property'
+import Day from "./components/Day/Day";
 
-import { FaCloudMoon, FaTemperatureHalf,FaWind,FaCloudscale } from "react-icons/fa6";
-import { IoWaterOutline,IoSunnyOutline,IoRainyOutline   } from "react-icons/io5";
+import { FaCloudMoon, FaTemperatureHalf, FaWind, FaCloudscale } from "react-icons/fa6";
+import { IoWaterOutline, IoSunnyOutline, IoRainyOutline } from "react-icons/io5";
 import { LiaCloudscale } from "react-icons/lia";
 
 function App() {
@@ -14,14 +15,14 @@ function App() {
       <div class="flex h-screen  justify-center w-full ">
         <div className="container m-0 p-0 flex h-screen flex-col">
           <Header />
-          <div className="h-full grid grid-rows-8 grid-flow-col ">  
+          <div className="h-full grid grid-rows-8 grid-flow-col ">
 
             <div className="text-white flex items-end">
-            <p className="text-3xl font-semibold mb-2">Today Overview</p>
+              <p className="text-3xl font-semibold mb-2">Today Overview</p>
             </div>
-            
+
             <div class="flex-1 grid row-span-6 grid-cols-4 grid-flow-row gap-2 bg-gray-900 text-center justify-center items-center text-4xl">
-             
+
               <div className="h-full col-span-1 grid grid-cols-1 grid-flow-row  ">
                 <div className="grid grid-cols-3 grid-flow-row  w-full px-6 py-6 text-start rounded-md bg-gray-600 ">
                   <div className="col-span-4 ">
@@ -43,75 +44,26 @@ function App() {
 
 
               <div className="h-full col-span-1 grid grid-cols-1 gap-4 place-content-center p-4 bg-gray-600 rounded-md">
-                <Property icon={<FaTemperatureHalf className="text-md"/>} name={"Thermal sensation"} value={"%28"}/>
-                <Property icon={<FaWind className="text-md"/>} name={"Wind speed"} value={"%28"}/>
-                <Property icon={<IoWaterOutline className="text-md"/>} name={"Air humandity"} value={"%28"}/>
-                <Property icon={<IoSunnyOutline className="text-md"/>} name={"UV index"} value={"%28"}/>
-                <Property icon={<IoRainyOutline className="text-md"/>} name={"Probaility of rain"} value={"%28"}/>
-                <Property icon={<LiaCloudscale className="text-md"/>} name={"Pressure"} value={"%28"}/>
+                <Property icon={<FaTemperatureHalf className="text-md" />} name={"Thermal sensation"} value={"%28"} />
+                <Property icon={<FaWind className="text-md" />} name={"Wind speed"} value={"%28"} />
+                <Property icon={<IoWaterOutline className="text-md" />} name={"Air humandity"} value={"%28"} />
+                <Property icon={<IoSunnyOutline className="text-md" />} name={"UV index"} value={"%28"} />
+                <Property icon={<IoRainyOutline className="text-md" />} name={"Probaility of rain"} value={"%28"} />
+                <Property icon={<LiaCloudscale className="text-md" />} name={"Pressure"} value={"%28"} />
               </div>
 
 
               <div className="h-full col-span-2 grid grid-cols-1 gap-4 place-content-center p-4  bg-gray-600 rounded-md">
-                <div className="h-full flex flex-col items-center justify-center  ">
-                  <div className="  text-white w-full p-3 flex ">
-                    <FaCloudMoon className="text-7xl font-normal" />
-                    <div className="text-center">
-                      <p className="ms-2 p-0  italic text-lg">Monday</p>
-                      <p className="ms-2 p-0  italic text-sm">May 16</p>
-                    </div>
-                    <div className="w-full text-end">
-                      <p className="ms-2 p-0  italic text-lg">Clouds</p>
-                      <p className="ms-2 p-0  italic text-sm">28°C / 32°C</p>
-                    </div>
 
-                  </div>
-                  <hr class="basis-full w-full bg-transparent border-1 border-gray-300/25" />
-                </div>
-                <div className="h-full flex flex-col items-center justify-center  ">
-                  <div className="  text-white w-full p-3 flex ">
-                    <FaCloudMoon className="text-7xl font-normal" />
-                    <div className="text-center">
-                      <p className="ms-2 p-0  italic text-lg">Monday</p>
-                      <p className="ms-2 p-0  italic text-sm">May 16</p>
-                    </div>
-                    <div className="w-full text-end">
-                      <p className="ms-2 p-0  italic text-lg">Clouds</p>
-                      <p className="ms-2 p-0  italic text-sm">28°C / 32°C</p>
-                    </div>
+                <Day icon={<FaCloudMoon className="text-7xl font-normal" />}
+                  day={"Monday"} date={"May 16"} weather={"Clouds"} temp={"28°C / 32°C"} />
+                <Day icon={<FaCloudMoon className="text-7xl font-normal" />}
+                  day={"Monday"} date={"May 16"} weather={"Clouds"} temp={"28°C / 32°C"} />
+                <Day icon={<FaCloudMoon className="text-7xl font-normal" />}
+                  day={"Monday"} date={"May 16"} weather={"Clouds"} temp={"28°C / 32°C"} />
+                <Day icon={<FaCloudMoon className="text-7xl font-normal" />}
+                  day={"Monday"} date={"May 16"} weather={"Clouds"} temp={"28°C / 32°C"} />
 
-                  </div>
-                  <hr class="basis-full w-full bg-transparent border-1 border-gray-300/25" />
-                </div>
-                <div className="h-full flex flex-col items-center justify-center  ">
-                  <div className="  text-white w-full p-3 flex ">
-                    <FaCloudMoon className="text-7xl font-normal" />
-                    <div className="text-center">
-                      <p className="ms-2 p-0  italic text-lg">Monday</p>
-                      <p className="ms-2 p-0  italic text-sm">May 16</p>
-                    </div>
-                    <div className="w-full text-end">
-                      <p className="ms-2 p-0  italic text-lg">Clouds</p>
-                      <p className="ms-2 p-0  italic text-sm">28°C / 32°C</p>
-                    </div>
-
-                  </div>
-                  <hr class="basis-full w-full bg-transparent border-1 border-gray-300/25" />
-                </div>
-                <div className="h-full flex flex-col items-center justify-center  ">
-                  <div className="  text-white w-full p-3 flex ">
-                    <FaCloudMoon className="text-7xl font-normal" />
-                    <div className="text-center">
-                      <p className="ms-2 p-0  italic text-lg">Monday</p>
-                      <p className="ms-2 p-0  italic text-sm">May 16</p>
-                    </div>
-                    <div className="w-full text-end">
-                      <p className="ms-2 p-0  italic text-lg">Clouds</p>
-                      <p className="ms-2 p-0  italic text-sm">28°C / 32°C</p>
-                    </div>
-
-                  </div>
-                </div>
               </div>
 
             </div>
