@@ -2,6 +2,7 @@ import React from "react";
 
 // Components
 import Header from './components/Header/Header'
+import Property from './components/Property/Property'
 
 import { FaCloudMoon, FaTemperatureHalf,FaWind,FaCloudscale } from "react-icons/fa6";
 import { IoWaterOutline,IoSunnyOutline,IoRainyOutline   } from "react-icons/io5";
@@ -42,54 +43,12 @@ function App() {
 
 
               <div className="h-full col-span-1 grid grid-cols-1 gap-4 place-content-center p-4 bg-gray-600 rounded-md">
-                <div className="h-full flex flex-col items-center justify-center ">
-                  <div className="  text-white w-full p-2 flex ">
-                    <FaTemperatureHalf className="text-md" />
-                    <p className="ms-2 p-0  italic text-lg">Thermal sensation: %28</p>
-
-                  </div>
-                  <hr class="basis-full w-full bg-transparent border-1 border-gray-300/25"/>
-                </div>
-
-                <div className="h-full flex flex-col items-center justify-center ">
-                  <div className="  text-white w-full p-2 flex ">
-                    <FaWind className="text-md" />
-                    <p className="ms-2 p-0  italic text-lg">Wind speed: %28</p>
-
-                  </div>
-                  <hr class="basis-full w-full bg-transparent border-1 border-gray-300/25"/>
-                </div>
-                <div className="h-full flex flex-col items-center justify-center ">
-                  <div className="  text-white w-full p-2 flex ">
-                    <IoWaterOutline className="text-md" />
-                    <p className="ms-2 p-0  italic text-lg">Air humidity: %28</p>
-
-                  </div>
-                  <hr class="basis-full w-full bg-transparent border-1 border-gray-300/25"/>
-                </div>
-                <div className="h-full flex flex-col items-center justify-center ">
-                  <div className="  text-white w-full p-2 flex ">
-                    <IoSunnyOutline className="text-md" />
-                    <p className="ms-2 p-0  italic text-lg">UV Index: %28</p>
-
-                  </div>
-                  <hr class="basis-full w-full bg-transparent border-1 border-gray-300/25"/>
-                </div>
-                <div className="h-full flex flex-col items-center justify-center ">
-                  <div className="  text-white w-full p-2 flex ">
-                    <IoRainyOutline className="text-md" />
-                    <p className="ms-2 p-0  italic text-lg">Probability of rain: %28</p>
-
-                  </div>
-                  <hr class="basis-full w-full bg-transparent border-1 border-gray-300/25"/>
-                </div>
-                <div className="h-full flex flex-col items-center justify-center ">
-                  <div className="  text-white w-full p-2 flex ">
-                    <LiaCloudscale className="text-md font-normal" />
-                    <p className="ms-2 p-0  italic text-lg">Pressure: %28</p>
-
-                  </div>
-                </div>
+                <Property icon={<FaTemperatureHalf className="text-md"/>} name={"Thermal sensation"} value={"%28"}/>
+                <Property icon={<FaWind className="text-md"/>} name={"Wind speed"} value={"%28"}/>
+                <Property icon={<IoWaterOutline className="text-md"/>} name={"Air humandity"} value={"%28"}/>
+                <Property icon={<IoSunnyOutline className="text-md"/>} name={"UV index"} value={"%28"}/>
+                <Property icon={<IoRainyOutline className="text-md"/>} name={"Probaility of rain"} value={"%28"}/>
+                <Property icon={<LiaCloudscale className="text-md"/>} name={"Pressure"} value={"%28"}/>
               </div>
 
 
