@@ -1,15 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 // Components
 import Header from './components/Header/Header'
 import Property from './components/Property/Property'
 import Day from "./components/Day/Day";
 
+// Utils
+import getLocation from "./utils/getLocation";
+
+
 import { FaCloudMoon, FaTemperatureHalf, FaWind, FaCloudscale } from "react-icons/fa6";
 import { IoWaterOutline, IoSunnyOutline, IoRainyOutline } from "react-icons/io5";
 import { LiaCloudscale } from "react-icons/lia";
 
 function App() {
+
+  useEffect(() => {
+    let isGetLocatin = getLocation();
+    if (isGetLocatin)
+      console.log("sa")
+    else
+      console.log("as")
+  }, [])
+
+
   return (
     <div className="App  h-full w-full  bg-gray-900">
       <div class="flex h-screen  justify-center w-full ">
