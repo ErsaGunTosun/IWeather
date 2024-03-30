@@ -10,7 +10,7 @@ function Property({icon,name,value,isLast=false}) {
                 <p className="ms-2 p-0  italic text-lg">{name}: {value}</p>
 
             </div>
-            {isLast ? "" : <hr class="basis-full w-full bg-transparent border-1 border-gray-300/25" />}
+            {isLast ? "" : <hr className="basis-full w-full bg-transparent border-1 border-gray-300/25" />}
         </div>
     )
 }

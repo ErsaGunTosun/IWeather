@@ -16,7 +16,7 @@ function Day({icon,day,date,weather,temp,isLast=false}) {
                 </div>
 
             </div>
-            {isLast ? "" : <hr class="basis-full w-full bg-transparent border-1 border-gray-300/25" />}
+            {isLast ? "" : <hr className="basis-full w-full bg-transparent border-1 border-gray-300/25" />}
         </div>
     )
 }

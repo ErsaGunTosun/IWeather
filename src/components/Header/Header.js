@@ -22,10 +22,10 @@ function Header() {
                 <Search />
 
                 <div className='flex items-center justify-end  basis-2/5 order-2 mb-2 md:mb-0 md:justify-end lg:justify-start md:basis-1/6  md:order-last lg:basis-1/4 '>
-                    <button type="button" class="bg-gray-600 px-4 py-3.5 ms-2 rounded-md transition ease-in-out delay-50 hover:scale-95">
+                    <button type="button" className="bg-gray-600 px-4 py-3.5 ms-2 rounded-md transition ease-in-out delay-50 hover:scale-95">
                         <IoLocationSharp size={20} className='text-gray-200' />
                     </button>
-                    <button type="button" class=" bg-gray-600 px-4 py-3.5 ms-2 rounded-md transition ease-in-out delay-50 hover:scale-95">
+                    <button type="button" className=" bg-gray-600 px-4 py-3.5 ms-2 rounded-md transition ease-in-out delay-50 hover:scale-95">
                         <FaLightbulb size={20} className='text-gray-200 ' />
                     </button>
                 </div>
