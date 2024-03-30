@@ -26,7 +26,7 @@ function App() {
 
   return (
     <div className="App  h-full w-full  bg-gray-900">
-      <div class="flex h-screen  justify-center w-full ">
+      <div className="flex h-screen  justify-center w-full ">
         <div className="container m-0 p-0 flex h-screen flex-col">
           <Header />
           <div className="h-full grid grid-rows-8 grid-flow-col ">
@@ -35,7 +35,7 @@ function App() {
               <p className="text-3xl font-semibold mb-2">Today Overview</p>
             </div>
 
-            <div class="flex-1 grid row-span-6 grid-cols-4 grid-flow-row gap-2 bg-gray-900 text-center justify-center items-center text-4xl">
+            <div className="flex-1 grid row-span-6 grid-cols-4 grid-flow-row gap-2 bg-gray-900 text-center justify-center items-center text-4xl">
 
               <div className="h-full col-span-1 grid grid-cols-1 grid-flow-row  ">
                 <div className="grid grid-cols-3 grid-flow-row  w-full px-6 py-6 text-start rounded-md bg-gray-600 ">
@@ -85,9 +85,9 @@ function App() {
         </div>
       </div>
 
-      <div class="flex h-screen  justify-center w-full ">
+      <div className="flex h-screen  justify-center w-full ">
         <div className="container m-0 p-0 flex h-screen flex-col">
-          <div class="flex-1 grid grid-cols-2  grid-flow-row bg-gray-900 text-center justify-center items-center text-4xl pt-2">
+          <div className="flex-1 grid grid-cols-2  grid-flow-row bg-gray-900 text-center justify-center items-center text-4xl pt-2">
             <div className="h-full bg-red-500">
               today chart
             </div>
