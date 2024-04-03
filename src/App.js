@@ -19,7 +19,7 @@ import { LiaCloudscale } from "react-icons/lia";
 
 
 function App() {
-  const [coords, setCoords] = useState([])
+  const [coords, setCoords] = useState([0,0])
   const weather = useSelector((state) => state.weather)
   const location = useSelector((state) => state.location.value)
   const dispatch = useDispatch()
