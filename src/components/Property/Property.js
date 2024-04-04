@@ -7,7 +7,7 @@ function Property({icon,name,value,isLast=false}) {
             <div className="w-full flex p-2 text-white">
                 {/* <FaTemperatureHalf className="text-md" /> */}
                 {icon}
-                <p className="text-lg italic ms-2 p-0 ">{name}: {value}</p>
+                <p className="text-lg italic ms-2 p-0 ">{name}: <span className='font-thin'>{value}</span></p>
 
             </div>
             {isLast ? "" : <hr className="w-full basis-full bg-transparent border-1 border-gray-300/25" />}

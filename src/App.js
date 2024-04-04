@@ -15,8 +15,8 @@ import Icon from "./components/Icon/Icon"
 import getLocation from "./utils/getLocation";
 import getCurrentWeather from "./utils/getWeather";
 
-
-import { FaCloudMoon, FaTemperatureHalf, FaWind, FaMountain } from "react-icons/fa6";
+// Icons
+import { FaTemperatureHalf, FaWind, FaMountain } from "react-icons/fa6";
 import { IoWaterOutline, IoSunnyOutline } from "react-icons/io5";
 import { LiaCloudscale } from "react-icons/lia";
 
@@ -27,6 +27,7 @@ function App() {
   const weather = useSelector((state) => state.weather)
   const location = useSelector((state) => state.location.value)
   const units = useSelector((state) => state.units.value)
+
   const dispatch = useDispatch()
 
   const locationRead = async (pos) => {
@@ -95,12 +96,12 @@ function App() {
                     <p className="text-xl font-bold text-white">{location?.name}, {location?.country}</p>
                     <p className="text-sm text-white">{getDate(weather.current?.dt)?.text}</p>
                   </div>
-                  <div className="flex flex-row basis-3/5">
-                    <div className="flex basis-2/3 xl:basis-1/2 justify-end items-end  text-center">
-                      <div className="xl:w-full h-full flex flex-col">
+                  <div className="flex flex-row basis-3/5 ">
+                    <div className="flex basis-2/3 xl:basis-1/2 justify-end items-end text-center ">
+                      <div className="xl:w-full h-full flex flex-col ">
                         <div className="basis-1/4 xl:basis-2/3 "></div>
-                        <div className="flex flex-col basis-3/4 xl:basis-1/3 justify-center text-white ">
-                          <p className="text-md font-bold">{Math.round(weather.current.main?.temp)}</p>
+                        <div className="flex flex-col basis-3/4 xl:basis-1/3 justify-center text-white  ">
+                          <p className="text-md font-bold">{Math.round(weather.current.main?.temp)}°{units ? "C":"F"}</p>
                           <p className="text-sm">
                             {Math.round(weather.current.main?.temp_min)} °{units ? "C":"F"} / {Math.round(weather.current.main?.temp_max)} °{units ? "C":"F"}
                             </p>
@@ -108,9 +109,8 @@ function App() {
                         </div>
                       </div>
                     </div>
-
-                    <div className="flex basis-1/3 xl:basis-1/2 justify-start items-end text-white"> 
-                      <Icon type={weather.current.weather ? weather.current.weather[0]?.description : ""} size={192} />
+                    <div className="flex basis-1/3 xl:basis-1/2 justify-start items-end text-white "> 
+                      <Icon type={weather.current.weather ? weather.current.weather[0]?.description : ""} size={184} />
                     </div>
                   </div>
                 </div>
@@ -118,17 +118,17 @@ function App() {
 
 
               <div className="h-full flex flex-col xl:basis-1/4 p-4 justify-evenly bg-gray-600 rounded-md">
-                <Property icon={<FaTemperatureHalf className="text-md" />} name={"Thermal sensation"}
+                <Property icon={<FaTemperatureHalf className="text-xl" />} name={"Feel Temperature  "}
                   value={weather.current?.main?.feels_like} />
-                <Property icon={<FaWind className="text-md" />} name={"Wind speed"}
+                <Property icon={<FaWind className="text-xl" />} name={"Wind speed"}
                   value={weather.current?.wind?.speed} />
-                <Property icon={<IoWaterOutline className="text-md" />} name={"Air Humidity"}
+                <Property icon={<IoWaterOutline className="text-xl" />} name={"Air Humidity"}
                   value={weather.data?.list ? weather.data?.list[0]?.main?.humidity : ""} />
-                <Property icon={<IoSunnyOutline className="text-md" />} name={"Sunset"}
+                <Property icon={<IoSunnyOutline className="text-xl" />} name={"Sunset"}
                   value={getTime(weather.current?.sys?.sunset)} />
-                <Property icon={<FaMountain className="text-md" />} name={"Sea Level"}
+                <Property icon={<FaMountain className="text-xl" />} name={"Sea Level"}
                   value={weather.data?.list ? weather.data?.list[0]?.main?.sea_level : ""} />
-                <Property icon={<LiaCloudscale className="text-md" />} name={"Pressure"}
+                <Property icon={<LiaCloudscale className="text-xl" />} name={"Pressure"}
                   value={weather.current?.main?.pressure} isLast={true} />
               </div>
 
@@ -139,7 +139,7 @@ function App() {
                     let cardIndex = Math.round(weather.dates[key].length / 2);
                     let item = weather.dates[key][cardIndex];
                     let date = getDate(item.dt);
-                    return (<Day icon={<Icon type={item.weather ? item.weather[0]?.description : ""} className={"text-7xl"} />}
+                    return (<Day icon={<Icon type={item.weather ? item.weather[0]?.description : ""} className={"text-6xl"} />}
                       day={date.day} date={`${date.month} ${date.date}`} weather={item.weather[0].main}
                       temp={`${Math.floor(item.main.temp_min)}°${units ? "C":"F"} / ${Math.round(item.main.temp_max)}°${units ? "C":"F"}`}
                       isLast={index = Object.keys(weather.dates).length - 1 ? true : false} />)

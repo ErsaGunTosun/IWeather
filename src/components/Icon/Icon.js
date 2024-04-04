@@ -17,6 +17,7 @@ function Icon({ type,className,size  }) {
         "shower rain": <BsCloudDrizzleFill  size={size}/>,
         "rain": <BsCloudRainHeavyFill size={size}/>,
         "thunderstorm": <BsCloudLightningRainFill size={size}/>,
+        "light snow": <BsCloudSnowFill size={size}/>,
         "snow": <BsCloudSnowFill size={size}/>,
         "mist": <BsCloudFog2Fill size={size}/>,
     }
