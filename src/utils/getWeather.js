@@ -5,19 +5,19 @@ import { updateLocation } from '../stores/location';
 const getCurrentLocation = (dispatch, isCoords = false, coords = [0, 0], name = "istanbul") => {
     if (isCoords) {
         if (coords[0] == 0 && coords[1] == 0) {
-            axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${name}&appid=${process.env.REACT_APP_API_KEY}`)
+            axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${name}&appid=${process.env.REACT_APP_API_KEY}`)
                 .then(rslt => {
                     dispatch(updateLocation(rslt.data[0]));
                 })
         } else {
-            axios.get(`http://api.openweathermap.org/geo/1.0/reverse?lat=${coords[0]}&lon=${coords[1]}&limit=1&appid=${process.env.REACT_APP_API_KEY}`)
+            axios.get(`https://api.openweathermap.org/geo/1.0/reverse?lat=${coords[0]}&lon=${coords[1]}&limit=1&appid=${process.env.REACT_APP_API_KEY}`)
                 .then(rslt => {
                     dispatch(updateLocation(rslt.data[0]));
                 })
         }
     }
     else {
-        axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${name}&appid=${process.env.REACT_APP_API_KEY}`)
+        axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${name}&appid=${process.env.REACT_APP_API_KEY}`)
             .then(rslt => {
                 dispatch(updateLocation(rslt.data[0]));
             })
