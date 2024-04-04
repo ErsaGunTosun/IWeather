@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
+// Redux
+import { changeUnits } from "./stores/units";
+
 
 // Components
 import Header from './components/Header/Header'
@@ -23,6 +26,7 @@ function App() {
   const [coords, setCoords] = useState([0,0])
   const weather = useSelector((state) => state.weather)
   const location = useSelector((state) => state.location.value)
+  const units = useSelector((state) => state.units.value)
   const dispatch = useDispatch()
 
   const locationRead = async (pos) => {
@@ -48,21 +52,35 @@ function App() {
     return `${date.getHours()}:${date.getMinutes()}`;
   }
 
+  const getUnits = () => {
+    if(localStorage.getItem("units") == null){
+      localStorage.setItem("units", true)
+    }
+    else{
+      dispatch(changeUnits(localStorage.getItem("units")))
+    }
+  }
 
   useEffect(() => {
+    getUnits();
     getLocation(locationRead);
   }, [])
 
   useEffect(() => {
-    getCurrentWeather(coords, dispatch);
+    getCurrentWeather(coords, dispatch,units);
   }, [coords])
+
+  useEffect(() => {
+    getCurrentWeather(coords, dispatch,units);
+  }, [units])
+  
 
 
   return (
     <div className="App w-full h-full bg-gray-900">
       <div className="w-full h-screen flex justify-center  ">
         <div className="container h-screen flex-col m-0 p-0 flex ">
-          <Header />
+          <Header setCoords={setCoords} />
           <div className="h-full flex flex-col">
 
             <div className="flex items-end p-2 text-white">
@@ -83,7 +101,9 @@ function App() {
                         <div className="basis-1/4 xl:basis-2/3 "></div>
                         <div className="flex flex-col basis-3/4 xl:basis-1/3 justify-center text-white ">
                           <p className="text-md font-bold">{Math.round(weather.current.main?.temp)}</p>
-                          <p className="text-sm">{Math.round(weather.current.main?.temp_min)}°C / {Math.round(weather.current.main?.temp_max)}°C</p>
+                          <p className="text-sm">
+                            {Math.round(weather.current.main?.temp_min)} °{units ? "C":"F"} / {Math.round(weather.current.main?.temp_max)} °{units ? "C":"F"}
+                            </p>
                           <p className="text-xs">{weather.current.weather ? weather.current.weather[0].main : ""}</p>
                         </div>
                       </div>
@@ -119,10 +139,9 @@ function App() {
                     let cardIndex = Math.round(weather.dates[key].length / 2);
                     let item = weather.dates[key][cardIndex];
                     let date = getDate(item.dt);
-                    console.log(item.weather[0].description)
                     return (<Day icon={<Icon type={item.weather ? item.weather[0]?.description : ""} className={"text-7xl"} />}
                       day={date.day} date={`${date.month} ${date.date}`} weather={item.weather[0].main}
-                      temp={`${Math.floor(item.main.temp_min)}°C / ${Math.round(item.main.temp_max)}°C`}
+                      temp={`${Math.floor(item.main.temp_min)}°${units ? "C":"F"} / ${Math.round(item.main.temp_max)}°${units ? "C":"F"}`}
                       isLast={index = Object.keys(weather.dates).length - 1 ? true : false} />)
                   })
                 }

@@ -26,8 +26,9 @@ const getCurrentLocation = (dispatch, isCoords = false, coords = [0, 0], name = 
 
 }
 
-const getWeathers = (loc, dispatch) => {
-    axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${loc[0]}&lon=${loc[1]}&units=metric&appid=${process.env.REACT_APP_API_KEY}`)
+const getWeathers = (loc, dispatch,units=true) => {
+    axios
+    .get(`https://api.openweathermap.org/data/2.5/forecast?lat=${loc[0]}&lon=${loc[1]}&units=${units?"metric":"imperial"}&appid=${process.env.REACT_APP_API_KEY}`)
         .then(rslt => {
             if (rslt.status == 200) {
                 let dates = {};
@@ -44,14 +45,15 @@ const getWeathers = (loc, dispatch) => {
 }
 
 
-const getCurrentWeather = (loc, dispatch) => {
+const getCurrentWeather = (loc, dispatch,units=true) => {
     if (loc[0] == 0 && loc[1] == 0) {
         getCurrentLocation(dispatch, false, loc);
     } else {
-        axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${loc[0]}&lon=${loc[1]}&units=metric&appid=${process.env.REACT_APP_API_KEY}`)
+        axios
+        .get(`https://api.openweathermap.org/data/2.5/weather?lat=${loc[0]}&lon=${loc[1]}&units=${units?"metric":"imperial"}&appid=${process.env.REACT_APP_API_KEY}`)
             .then(rslt => {
                 if (rslt.status == 200) {
-                    getWeathers(loc, dispatch);
+                    getWeathers(loc, dispatch,units);
                     dispatch(updateCurrentWeather(rslt.data));
                 }
             })

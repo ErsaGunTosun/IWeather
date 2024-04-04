@@ -1,14 +1,31 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux';
 
 // Components
 import Search from '../Search/Search';
 
+// Utils 
+import getLocation from '../../utils/getLocation';
+
 // Icons
-import { FaLightbulb, FaCloud } from "react-icons/fa";
+import { TbTemperatureCelsius, TbTemperatureFahrenheit } from "react-icons/tb";
+import { FaCloud } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
+import { changeUnits } from '../../stores/units';
 
 
-function Header() {
+function Header({ setCoords }) {
+    const units = useSelector((state) => state.units.value);
+    const dispatch = useDispatch()
+
+    const setUnits = ()=>{
+        dispatch(changeUnits(!units))
+        localStorage.setItem("units", !units)
+    }
+
+    const locationRead = async (pos) => {
+        setCoords([pos.coords.latitude, pos.coords.longitude])
+    }
     return (
         <nav className="bg-transparent">
             <div className="max-w-screen-xl flex flex-wrap items-center mx-auto p-4 md:flex-nowrap ">
@@ -22,11 +39,16 @@ function Header() {
                 <Search />
 
                 <div className='flex items-center justify-end  basis-2/5 order-2 mb-2 md:mb-0 md:justify-end lg:justify-start md:basis-1/6  md:order-last lg:basis-1/4 '>
-                    <button type="button" className="bg-gray-600 px-4 py-3.5 ms-2 rounded-md transition ease-in-out delay-50 hover:scale-95">
+                    <button onClick={() => getLocation(locationRead)} type="button" className="bg-gray-600 px-4 py-3.5 ms-2 rounded-md transition ease-in-out delay-50 hover:scale-95">
                         <IoLocationSharp size={20} className='text-gray-200' />
                     </button>
-                    <button type="button" className=" bg-gray-600 px-4 py-3.5 ms-2 rounded-md transition ease-in-out delay-50 hover:scale-95">
-                        <FaLightbulb size={20} className='text-gray-200 ' />
+                    <button type="button" onClick={()=>setUnits()} className=" bg-gray-600 px-4 py-3.5 ms-2 rounded-md transition ease-in-out delay-50 hover:scale-95">
+                        {
+                            units ?
+                                <TbTemperatureCelsius size={20} className='text-gray-200 ' />
+                                :
+                                <TbTemperatureFahrenheit size={20} className='text-gray-200 ' />
+                        }
                     </button>
                 </div>
             </div>
