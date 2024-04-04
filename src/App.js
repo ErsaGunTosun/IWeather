@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Header from './components/Header/Header'
 import Property from './components/Property/Property'
 import Day from "./components/Day/Day";
+import Icon from "./components/Icon/Icon"
 
 // Utils
 import getLocation from "./utils/getLocation";
@@ -73,7 +74,7 @@ function App() {
               <div className="h-full basis-full xl:basis-1/4 bg-gray-600 rounded-md">
                 <div className="w-full h-full flex flex-col sm:flex-row xl:flex-col p-4 text-start rounded-md">
                   <div className="w-full basis-2/5 pt-6">
-                    <p className="text-xl font-bold text-white">{location.name}, {location.country}</p>
+                    <p className="text-xl font-bold text-white">{location?.name}, {location?.country}</p>
                     <p className="text-sm text-white">{getDate(weather.current?.dt)?.text}</p>
                   </div>
                   <div className="flex flex-row basis-3/5">
@@ -88,8 +89,8 @@ function App() {
                       </div>
                     </div>
 
-                    <div className="flex basis-1/3 xl:basis-1/2 justify-start items-end text-white">
-                      <FaCloudMoon size={192} className="" />
+                    <div className="flex basis-1/3 xl:basis-1/2 justify-start items-end text-white"> 
+                      <Icon type={weather.current.weather ? weather.current.weather[0]?.description : ""} size={192} />
                     </div>
                   </div>
                 </div>
@@ -118,7 +119,8 @@ function App() {
                     let cardIndex = Math.round(weather.dates[key].length / 2);
                     let item = weather.dates[key][cardIndex];
                     let date = getDate(item.dt);
-                    return (<Day icon={<FaCloudMoon className="text-7xl font-normal" />}
+                    console.log(item.weather[0].description)
+                    return (<Day icon={<Icon type={item.weather ? item.weather[0]?.description : ""} className={"text-7xl"} />}
                       day={date.day} date={`${date.month} ${date.date}`} weather={item.weather[0].main}
                       temp={`${Math.floor(item.main.temp_min)}°C / ${Math.round(item.main.temp_max)}°C`}
                       isLast={index = Object.keys(weather.dates).length - 1 ? true : false} />)
