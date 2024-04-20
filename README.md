@@ -54,7 +54,7 @@ npm install
 
 4. **Create a .env File:**
     - Create a new file named `.env` in the root directory of the project.
-    - Open the .env file and add your `REACT_APP_API_KEYL="api key"` , credentials, or any sensitive information needed for the project. Ensure this file is never shared or exposed publicly.
+    - Open the .env file and add your `REACT_APP_API_KEY="api key"` , credentials, or any sensitive information needed for the project. Ensure this file is never shared or exposed publicly.
 
 5. Start the application:
 ```bash
